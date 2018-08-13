@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body ng-app="myApp">
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+     <li><a href="#!dir.html">Main</a></li>
+      <li><a href="#!london">City 1</a></li>
+      <li><a href="#!paris">City 2</a></li>
+      <li><a href="#!us">City 3</a></li>
+      <li><a href="#!conatct"></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+$routeProvider
+    .when("/", {
+        templateUrl : "main.htm",
+    })
+    .when("/london", {
+        templateUrl : "london.html",
+        controller : "londonCtrl"
+    })
+    .when("/paris", {
+        templateUrl : "paris.html",
+        controller : "parisCtrl"
+    })
+     .when("/us", {
+        templateUrl : "us.html",
+        controller : "usCtrl"
+    })
+    .when("/us", {
+        templateUrl : "us.html",
+        controller : "usCtrl"
+    });
+});
+
+/*
+app.controller("londonCtrl", function ($scope) {
+    $scope.msg = "I love London";
+});
+app.controller("parisCtrl", function ($scope) {
+    $scope.msg = "I love Paris";
+});
+*/
+
+</script>
+
+</body>
+</html>

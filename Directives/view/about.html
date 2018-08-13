@@ -1,0 +1,20 @@
+<h2>{{ categoryName }}</h2>
+
+<ul>
+    <li ng-repeat="item in items">
+        <a href="#/item/{{item.name}}">{{item.name}}</a> : ${{item.cost}}
+    </li>
+</ul>
+... home.html
+<h2>Home Page</h2>
+
+<ul>
+    <li><a href="#/category/apple">Apple Products</a></li>
+    <li><a href="#/category/microsoft">Microsoft Products</a></li>
+    
+</ul>
+... 
+... single.html
+<h2>Item</h2>
+
+<p>{{ itemName }}</p>
